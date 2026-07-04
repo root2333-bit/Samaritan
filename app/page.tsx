@@ -140,11 +140,14 @@ export default function Chat() {
     .filter((m) => m.role === "assistant")
     .pop()?.content;
 
+  // Track message count to trigger effect even when response text is the same
+  const messageCount = messages.length;
+
   useEffect(() => {
     if (lastResponse) {
       setPhraseArray(lastResponse.split(" "));
     }
-  }, [lastResponse]);
+  }, [messageCount]);
 
   const saveSettings = () => {
     localStorage.setItem("sam_openai_key", apiKey);
