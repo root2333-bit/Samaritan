@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/Samaritan-GPT",
+  basePath: "/Samaritan",
   images: {
     unoptimized: true,
   },
